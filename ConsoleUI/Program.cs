@@ -12,22 +12,26 @@ namespace ConsoleUI
         {
             //CarManagerTest();
             //ColorManagerTest();
-            // BrandManagerTest();
+            BrandManagerTest();
+            //CarDetailsTest();
 
+        }
+
+        private static void CarDetailsTest()
+        {
             CarManager carManager = new CarManager(new EfCarDal());
-            foreach (var item in carManager.GetCarDetails())
+            foreach (var item in carManager.GetCarDetails().Data)
             {
                 Console.WriteLine(item.Description + " - " + item.BrandName + " - " + item.ColorName);
             }
-
         }
 
         private static void BrandManagerTest()
         {
             BrandManager brandManager = new BrandManager(new EfBrandDal());
-            Brand b = brandManager.GetById(12);
+            Brand b = brandManager.GetById(12).Data;
             b.Name = "MINI";
-            brandManager.Update(b);
+            Console.WriteLine(brandManager.Update(b).Message);
         }
 
         private static void ColorManagerTest()
