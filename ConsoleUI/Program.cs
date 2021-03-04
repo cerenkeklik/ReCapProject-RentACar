@@ -12,9 +12,50 @@ namespace ConsoleUI
         {
             //CarManagerTest();
             //ColorManagerTest();
-            BrandManagerTest();
+            //BrandManagerTest();
             //CarDetailsTest();
+            //AddingUser();
+            //AddingCustomer();
+            //AddingRental();
 
+        }
+
+        private static void AddingRental()
+        {
+            Rental rent = new Rental();
+            rent.Id = 9;
+            rent.CarId = 5;
+            rent.CustomerId = 1;
+            rent.RentDate = DateTime.Now;
+            RentalManager rentalManager = new RentalManager(new EfRentalDal());
+            Console.WriteLine(rentalManager.Add(rent).Message);
+        }
+
+        private static void AddingCustomer()
+        {
+            Customer customer = new Customer();
+            customer.Id = 9;
+            customer.UserId = 10;
+            customer.CompanyName = "CerenAŞ";
+            Customer customer1 = new Customer();
+            customer1.UserId = 1;
+            customer1.Id = 10;
+            customer1.CompanyName = "SABANCI";
+            CustomerManager customerManager = new CustomerManager(new EfCustomerDal());
+            Console.WriteLine(customerManager.Add(customer).Message);
+            Console.WriteLine(customerManager.Add(customer1).Message);
+        }
+
+        private static void AddingUser()
+        {
+            User user = new User();
+            user.Id = 11;
+            user.FirstName = "Ceren";
+            user.LastName = "Keklik";
+            user.Email = "cerenkeklik67@hotmail.com";
+            user.Password = "1234";
+            UserManager userManager = new UserManager(new EfUserDal());
+            Console.WriteLine(userManager.Add(user).Message);
         }
 
         private static void CarDetailsTest()

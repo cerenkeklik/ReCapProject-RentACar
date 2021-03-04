@@ -18,6 +18,9 @@ namespace Business.Constants
         public static string BrandAddingFailed = "Brand adding failed.";
         public static string BrandDeletingFailed = "Brand deleting failed.";
         public static string BrandUpdatingFailed = "Brand updating failed.";
+        public static string Successful = "Successful!";
+        public static string Failed = "Failed!";
+        public static string CannotChooseCar = "This car is in our another customer!";
 
     }
 }
