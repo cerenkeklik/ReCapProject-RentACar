@@ -35,10 +35,10 @@ namespace ConsoleUI
         {
             Customer customer = new Customer();
             customer.Id = 9;
-            customer.UserId = 10;
+            customer.UserId = 11;
             customer.CompanyName = "CerenAŞ";
             Customer customer1 = new Customer();
-            customer1.UserId = 1;
+            customer1.UserId = 11;
             customer1.Id = 10;
             customer1.CompanyName = "SABANCI";
             CustomerManager customerManager = new CustomerManager(new EfCustomerDal());
