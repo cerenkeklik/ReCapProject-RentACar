@@ -21,6 +21,7 @@ namespace Business.Constants
         public static string Successful = "Successful!";
         public static string Failed = "Failed!";
         public static string CannotChooseCar = "This car is in our another customer!";
-
+        public static string CarImagesCountExceeded = "Car images count exceeded.";
+        public static string CarImageAdded = "Car image added.";
     }
 }
