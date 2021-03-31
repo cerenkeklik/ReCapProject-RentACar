@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Core.Entities.Concrete;
+using System;
 using System.Collections.Generic;
+using System.Runtime.Serialization;
 using System.Text;
 
 namespace Business.Constants
@@ -23,5 +25,13 @@ namespace Business.Constants
         public static string CannotChooseCar = "This car is in our another customer!";
         public static string CarImagesCountExceeded = "Car images count exceeded.";
         public static string CarImageAdded = "Car image added.";
+        public static string UserNotFound = "UserNotFound.";
+        public static string passwordError = "Wrong Password.";
+        public static string SuccessfulLogin = "Login Successfull";
+        public static string UserAlreadyExists = "User already exists.";
+        public static string UserRegistered = "User registered successfully.";
+        public static string AccessTokenCreated = "Access token created.";
+        public static string AuthorizationDenied = "Authorization denied.";
+        internal static string PasswordError = "Wrong password.";
     }
 }
