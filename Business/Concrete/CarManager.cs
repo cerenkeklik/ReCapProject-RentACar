@@ -2,6 +2,8 @@
 using Business.Aspects.Autofac;
 using Business.Constants;
 using Business.ValidationRules.FluentValidation;
+using Core.Aspects.Autofac.Caching;
+using Core.Aspects.Autofac.Transaction;
 using Core.Aspects.Autofac.Validation;
 using Core.Utilities;
 using Core.Utilities.Results;
@@ -32,12 +34,19 @@ namespace Business.Concrete
             return new SuccessResult(Messages.CarAdded);
         }
 
+        [TransactionScopeAspect]
+        public IResult AddTransactionalTest(Car car)
+        {
+            return null;
+        }
+
         public IResult Delete(Car car)
         {
            _carDal.Delete(car);
             return new SuccessResult(Messages.CarDeleted);
         }
 
+        [CacheAspect]
         public IDataResult<List<Car>> GetAll()
         {
             return new SuccessDataResult<List<Car>>(_carDal.GetAll());
@@ -50,6 +59,7 @@ namespace Business.Concrete
                 
         }
 
+        [CacheAspect]
         public IDataResult<List<Car>> GetCarsByBrandId(int Id)
         {
             return new SuccessDataResult<List<Car>>(_carDal.GetAll(c => c.BrandId == Id));
